@@ -6,3 +6,5 @@ function getUsers() {
     .then(data => renderApiResult.textContent = JSON.stringify(data))
     .catch(e => console.error(e))
 }
+
+getUsers()
