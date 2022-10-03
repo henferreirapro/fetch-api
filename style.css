@@ -1,0 +1,11 @@
+.containerUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#userAvatar {
+  max-width: 18em;
+  border-radius: 10em;
+}
