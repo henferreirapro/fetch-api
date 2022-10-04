@@ -8,7 +8,7 @@ function getUsers() {
 }
 
 function getUser() {
-  fetch(`${url}/1`)
+  fetch(`${url}/2`)
     .then(response => response.json())
     .then(data => {
       userAvatar.src = data.avatar
@@ -18,5 +18,26 @@ function getUser() {
     .catch(e => console.error(e))
 }
 
-getUsers()
+// POST
+function addUser() {
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(newUser),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+    .then(response => response.json())
+    .then(data => alertApi.textContent = data)
+    .catch(e => console.error(e))
+}
+
+const newUser = {
+  name: "Henrique Ferreira",
+  avatar: "https://avatars.githubusercontent.com/u/62857389?v=4",
+  city: "SP"
+}
+
+addUser(newUser)
+getUsers() 
 getUser()
