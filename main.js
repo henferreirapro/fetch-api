@@ -48,6 +48,18 @@ function updateUser(updatedUser, id) {
   .catch(e => console.error(e))
 }
 
+function deleteUser(id) {
+  fetch(`${url}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(data => alertApi.textContent = data)
+  .catch(e => console.error(e))
+}
+
 const newUser = {
   name: "Henrique Ferreira",
   avatar: "https://avatars.githubusercontent.com/u/62857389?v=4",
@@ -61,6 +73,8 @@ const updatedUser = {
   city: "recife"
 }
 // updateUser(updatedUser, 1)
+
+deleteUser(4)
 
 getUsers() 
 getUser(1)
